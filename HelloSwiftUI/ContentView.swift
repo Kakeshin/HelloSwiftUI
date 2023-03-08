@@ -2,7 +2,7 @@
 //  ContentView.swift
 //  HelloSwiftUI
 //
-//  Created by 岡本 翔真 on 2023/03/08.
+//  Created by Kakeshin on 2023/03/08.
 //
 
 import SwiftUI
