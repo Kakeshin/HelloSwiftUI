@@ -9,78 +9,80 @@ import SwiftUI
 
 struct FirstView: View {
     @State private var isShowingModal = false
+    @State private var isPresented = false
     @State private var isTransition = false
+    @State private var isCustom = false
     @State private var opacity: Double = 0
 
     var body: some View {
         ZStack {
             VStack {
-                NavigationStack {
-                    NavigationLink(destination: SecondView()) {
-                        Text("Push")
+                Button("CustomTransition") {
+                    withAnimation {
+                        isCustom.toggle()
                     }
-                    Button("Modal") {
-                        isShowingModal.toggle()
-                    }
-                    .sheet(isPresented: $isShowingModal) {
-                        SecondView()
-                    }
-                    Button(action: {
-                        isTransition.toggle()
-                    }) {
-                        Text("Fade")
-                    }
-                    Text("Showing flag: \(isShowingModal.description)")
-                    Text("Transition flag: \(isTransition.description)")
                 }
+                Button("Transition") {
+                    withAnimation {
+                        isTransition.toggle()
+                    }
+                }
+            }.position(x: 100, y: 200)
+
+            if isTransition {
+                SecondView().transition(.opacity)
             }
-            if self.isTransition {
-                FadeView(isPresented: $isTransition)
+            if isCustom {
+                Text("カピ通信")
+                    .font(.largeTitle)
+                    .padding()
+                    .background(Color.green)
+                    .transition(.customTransition)
             }
         }
     }
 }
 
 struct SecondView: View {
-    var body: some View {
-        VStack {
-            Text("Axe")
-        }
-    }
-}
-
-struct FadeView: View {
-    @State private var opacity: Double = 0
-    @Binding var isPresented: Bool
+    @State private var flag = false
 
     var body: some View {
-        ZStack(alignment: .topLeading) {
+        ZStack {
             VStack {
-                Text("FadeView")
-            }
-            .background(.red)
-            Button(action: {
-                withAnimation(.linear(duration: 0.5)) {
-                    isPresented = false
-                }
-            }) {
-                Text("Close")
+                Text("Axe")
                     .foregroundColor(.white)
+                Button("Back") {
+                    withAnimation {
+                        flag = true
+                    }
+                }
             }
-        }
-        .frame(width: .infinity, height: 400)
-        .background(.blue)
-        .opacity(opacity)
-        .onAppear {
-            withAnimation(.linear(duration: 0.5)) {
-                opacity = 1.0
+            .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
+            .background(.red)
+
+            if flag {
+                FirstView().transition(.opacity)
             }
         }
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        FirstView()
+struct MyScaleModifier: ViewModifier {
+    let size: CGFloat
+    let degrees: Double
+    func body(content: Content) -> some View {
+        content
+            .scaleEffect(size)
+            .rotationEffect(.degrees(degrees))
+    }
+}
+
+
+extension AnyTransition {
+    static var customTransition: AnyTransition {
+        AnyTransition.modifier(
+            active: MyScaleModifier(size: 0, degrees: -360),
+            identity: MyScaleModifier(size: 1, degrees: 0)
+        )
     }
 }
