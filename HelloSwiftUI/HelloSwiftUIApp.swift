@@ -6,12 +6,20 @@
 //
 
 import SwiftUI
+import ComposableArchitecture
 
 @main
 struct HelloSwiftUIApp: App {
     var body: some Scene {
         WindowGroup {
-            FirstView()
+            StandbyView()
+//            FeatureView(
+//                store: Store(
+//                    initialState: Feature.State(),
+//                    reducer: Feature()
+//                )
+//            )
         }
+
     }
 }
