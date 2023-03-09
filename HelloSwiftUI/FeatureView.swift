@@ -2,7 +2,7 @@
 //  FeatureView.swift
 //  HelloSwiftUI
 //
-//  Created by 岡本 翔真 on 2023/03/09.
+//  Created by Kakeshin on 2023/03/09.
 //
 
 import SwiftUI
