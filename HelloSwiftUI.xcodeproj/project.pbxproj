@@ -16,6 +16,8 @@
 		C14F21FC29B96CA300C81181 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = C14F21FB29B96CA300C81181 /* ComposableArchitecture */; };
 		C14F21FE29B9706200C81181 /* FeatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14F21FD29B9706200C81181 /* FeatureView.swift */; };
 		C14F220029B9C28600C81181 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14F21FF29B9C28600C81181 /* MenuView.swift */; };
+		C14F220429BB157100C81181 /* EasyFullScreenCover.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14F220329BB157100C81181 /* EasyFullScreenCover.swift */; };
+		C14F220629BB361400C81181 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14F220529BB361400C81181 /* HeaderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		C14F21F529B96B5000C81181 /* CouterStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CouterStore.swift; sourceTree = "<group>"; };
 		C14F21FD29B9706200C81181 /* FeatureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureView.swift; sourceTree = "<group>"; };
 		C14F21FF29B9C28600C81181 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
+		C14F220329BB157100C81181 /* EasyFullScreenCover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EasyFullScreenCover.swift; sourceTree = "<group>"; };
+		C14F220529BB361400C81181 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,8 +103,10 @@
 			isa = PBXGroup;
 			children = (
 				C14F21E729B80D7500C81181 /* StandbyView.swift */,
+				C14F220329BB157100C81181 /* EasyFullScreenCover.swift */,
 				C14F21FF29B9C28600C81181 /* MenuView.swift */,
 				C14F21FD29B9706200C81181 /* FeatureView.swift */,
+				C14F220529BB361400C81181 /* HeaderView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -187,6 +193,8 @@
 				C14F21E829B80D7500C81181 /* StandbyView.swift in Sources */,
 				C14F21F429B96B4A00C81181 /* FirstViewModel.swift in Sources */,
 				C14F21E629B80D7500C81181 /* HelloSwiftUIApp.swift in Sources */,
+				C14F220429BB157100C81181 /* EasyFullScreenCover.swift in Sources */,
+				C14F220629BB361400C81181 /* HeaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
